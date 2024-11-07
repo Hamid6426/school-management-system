@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from './../components/Navbar'
+import Footer from './../components/Footer'
+
 
 const geistSans = localFont({
     src: "./../fonts/GeistVF.woff",
@@ -15,7 +16,7 @@ const geistSans = localFont({
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="w-100 d-flex flex-row align-items-start ">
       <Navbar />
         <main  className={`${geistSans.variable} ${geistMono.variable}`}>{children}</main>
       <Footer />
