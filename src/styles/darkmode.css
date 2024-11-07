@@ -1,0 +1,24 @@
+/* Scope dark mode styles to elements when .dark is present */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.dark .bg-black0 {
+  background-color: #000 !important;
+}
+
+.dark .text-whites {
+  color: #ffffff !important;
+}
+
+.dark .bg-black1 {
+  background-color: #111 !important;
+}
+
+/* Example for dark mode with Bootstrap buttons */
+.dark .btn-primary {
+  background-color: #bb86fc !important;
+  border-color: #bb86fc !important;
+}
