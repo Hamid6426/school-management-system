@@ -1,0 +1,4 @@
+MONGODB_URI_LOCAL=mongodb://localhost:27017/school-dashboard
+JWT_SECRET=abcdefgh1234abcdefgh1234abcdefgh
+MONGO_PASSWORD=wMn3780BTlvZjFpp
+MONGODB_URI=mongodb+srv://hamid6426:wMn3780BTlvZjFpp@cluster0.5qbwa.mongodb.net/User?retryWrites=true&w=majority&appName=Cluster0
