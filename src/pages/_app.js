@@ -16,7 +16,11 @@ export default function App({ Component, pageProps }) {
     '/authentication/forgot-password',
   ];
 
-  const showSidebar = !noSidebarRoutes.includes(router.pathname);
+  // Check if the current route matches a dynamic path for reset password
+  const isResetPasswordRoute = router.asPath.startsWith('/authentication/reset-password/');
+
+  const showSidebar =
+    !noSidebarRoutes.includes(router.pathname) && !isResetPasswordRoute;
 
   return (
     <>

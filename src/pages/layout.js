@@ -16,7 +16,7 @@ const geistSans = localFont({
 
 export default function Layout({ children }) {
   return (
-    <div className="w-100 d-flex flex-row align-items-start ">
+    <div className="w-100 d-flex flex-row align-items-start " style={{ backgroundColor: "#ddd " }}>
       <Navbar />
         <main  className={`${geistSans.variable} ${geistMono.variable}`}>{children}</main>
       <Footer />

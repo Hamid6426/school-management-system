@@ -1,23 +1,19 @@
-// components/Sidebar.js
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Dropdown from './Dropdown'; // Import the Dropdown component
 
 const Navbar = () => {
   const router = useRouter();
 
   const navItems = [
     {
-      title: "Dashboard",
+      button: "Dashboard",
       links: [
-        { name: "Dashboard Home", path: "/" },
-        { name: "Admin Dashboard", path: "/admin-dashboard" },
-        { name: "Teacher Dashboard", path: "/teacher-dashboard" },
-        { name: "Student Dashboard", path: "/student-dashboard" },
-        { name: "Parent Dashboard", path: "/parent-dashboard" },
+        { name: "Home", path: "/dashboard/" },
       ],
     },
     {
-      title: "Student Management",
+      button: "Student Management",
       links: [
         { name: "All Students", path: "/all-students" },
         { name: "Student Profile", path: "/student-profile" },
@@ -25,39 +21,59 @@ const Navbar = () => {
       ],
     },
     {
-      title: "Class Scheduling",
+      button: "Class Scheduling",
       links: [
         { name: "Class Schedule", path: "/class-schedule" },
         { name: "Add Class", path: "/add-class" },
         { name: "Assign Teacher", path: "/assign-teacher" },
       ],
     },
-    // Add the other sections here similarly...
     {
-      title: "Authentication",
+      button: "Attendance",
       links: [
-        { name: "Login", path: "/login" },
-        { name: "Register", path: "/register" },
-        { name: "Password Reset", path: "/password-reset" },
+        { name: "Attendance", path: "/attendance" },
+        { name: "Attendance Report", path: "/attendance-report" },
+      ],
+    },
+    {
+      button: "Grading",
+      links: [
+        { name: "Grade Entry", path: "/grade-entry" },
+        { name: "Grade Report", path: "/grade-report" },
+        { name: "Student Report Card", path: "/student-report-card" },
+      ],
+    },
+    {
+      button: "Communication",
+      links: [
+        { name: "Messages", path: "/messages" },
+        { name: "New Message", path: "/new-message" },
+      ],
+    },
+    {
+      button: "Reports & Analytics",
+      links: [
+        { name: "Report Generator", path: "/report-generator" },
+        { name: "Progress Analytics", path: "/progress-analytics" },
+      ],
+    },
+    {
+      button: "User Management",
+      links: [
+        { name: "User Management", path: "/user-management" },
+        { name: "Role Assignment", path: "/role-assignment" },
       ],
     },
   ];
 
   return (
-    <div className="d-flex flex-column p-3 bg-light" style={{ width: '250px', height: '100vh' }}>
-      <h5 className="text-primary">Sidebar</h5>
+    <div className="d-flex flex-column p-3 bg-white" style={{ width: '240px', height: '100vh' }}>
+     <div className=''> 
+      <h5 className="text-primary mb-3">Hero Softwares</h5>
+      </div>
       {navItems.map((section, index) => (
-        <div key={index} className="mb-3">
-          <h6>{section.title}</h6>
-          <ul className="list-unstyled">
-            {section.links.map((link, idx) => (
-              <li key={idx} className={router.pathname === link.path ? 'active' : ''}>
-                <Link href={link.path} className="text-decoration-none">
-                  <span className="text-dark">{link.name}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div key={index} className="mb-3 d-block" style={{minWidth: "200px"}} >
+          <Dropdown buttonLabel={section.button} links={section.links}/>
         </div>
       ))}
     </div>

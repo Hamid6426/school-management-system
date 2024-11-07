@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div
       className="text-black bg-black1 text-whites d-flex min-vh-100 w-100 align-items-center justify-content-center position-relative"
-      style={{ background: "#eee" }}
+      style={{ background: "#ddd" }}
     >
       <Header />
       <div className="d-flex flex-row justify-content-center align-items-center w-100">
