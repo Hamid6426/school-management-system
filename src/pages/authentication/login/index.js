@@ -15,17 +15,20 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     
+    const { email, password } = formData; // Extract email and password
+    
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password }), // Send only email and password
     });
     
     const data = await response.json();
     if (response.ok) {
       localStorage.setItem('token', data.token);
-
+  
       // Redirect based on user role
+      const userRole = data.role; // Assuming the response has a 'role' property
       switch (userRole) {
         case 'Admin':
           router.push('/dashboard/admin');
@@ -47,7 +50,7 @@ const Login = () => {
       alert('Login failed. Please check your credentials.');
     }
   };
-
+  
   return (
     <div className="container my-5">
       <h2 className="mb-4">Login</h2>

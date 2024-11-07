@@ -1,0 +1,9 @@
+{
+    "tailwindCSS.colorDecorators": false,
+    "breadcrumbs.showClasses": false,
+    "java.debug.settings.exceptionBreakpoint.skipClasses": [
+
+    ],
+    "php.hover.containingClass": false,
+    "editor.minimap.enabled": false
+}
