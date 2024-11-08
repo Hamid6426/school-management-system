@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Dropdown from './Dropdown'; // Import the Dropdown component
 
@@ -68,7 +69,8 @@ const Navbar = () => {
 
   return (
     <div className="d-flex flex-column p-3 bg-white" style={{ width: '240px', height: '100vh' }}>
-     <div className=''> 
+     <div className='d-flex flex-row justify-content-start align-content-center gap-3'>
+     <Image src="/my-logo.svg" width="32" height={32} alt="logo"/> 
       <h5 className="text-primary mb-3">Hero Softwares</h5>
       </div>
       {navItems.map((section, index) => (
