@@ -16,9 +16,3 @@
 .dark .bg-black1 {
   background-color: #222 !important;
 }
-
-/* Example for dark mode with Bootstrap buttons */
-.dark .btn-primary {
-  background-color: #bb86fc !important;
-  border-color: #bb86fc !important;
-}

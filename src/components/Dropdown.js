@@ -26,10 +26,10 @@ const Dropdown = ({ buttonLabel, links }) => {
         {links.map((link, idx) => (
           <li key={idx}>
             <Link
-              href={link.path}
+              href={link.href}
               className="dropdown-item"
             >
-              {link.name}
+              {link.label}
             </Link>
           </li>
         ))}

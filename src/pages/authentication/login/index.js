@@ -32,16 +32,16 @@ const Login = () => {
       const userRole = data.role; // Assuming the response has a 'role' property
       switch (userRole) {
         case 'Admin':
-          router.push('/dashboard/admin');
+          router.push('/admin-dashboard');
           break;
         case 'Teacher':
-          router.push('/dashboard/teacher');
+          router.push('/teacher-dashboard');
           break;
         case 'Student':
-          router.push('/dashboard/student');
+          router.push('/student-dashboard');
           break;
         case 'Parent':
-          router.push('/dashboard/parent');
+          router.push('/parent-dashboard');
           break;
         default:
           alert('Role not recognized. Please contact support.');

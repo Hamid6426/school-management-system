@@ -1,5 +1,6 @@
-import { verifyToken } from '../../../lib/utils/verifyToken';
-import User from './../../../lib/models/User'; // Adjust the path as needed
+import { verifyToken } from './../../lib/utils/verifyToken';
+import User from './../../lib/models/User';
+import TeacherLayout from './../../components/Layouts/TeacherLayout';
 
 export async function getServerSideProps(context) {
   const token = context.req.cookies.token || ''; 
@@ -28,5 +29,11 @@ export async function getServerSideProps(context) {
   };
 }
 export default function TeacherDashboard({ userData }) {
-  return <h1>Welcome, {userData.fullName} ({userData.role})</h1>;
-}
+  return (
+    <TeacherLayout>
+    <div> 
+     <h1>Welcome, {userData.fullName} ({userData.role})</h1>;
+     </div>
+     </TeacherLayout>
+    )
+    }

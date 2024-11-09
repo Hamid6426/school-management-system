@@ -2,6 +2,7 @@
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import GetStarted from "./GetStarted";
+import Login from "./Login";
 
 export default function Header() {
   return (
@@ -11,6 +12,7 @@ export default function Header() {
     >
       <div className="d-flex flex-row justify-content-center align-items-center gap-4">
         <ThemeToggle />
+        <Login/>
         <GetStarted/>
       </div>
     </div>

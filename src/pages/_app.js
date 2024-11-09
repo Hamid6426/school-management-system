@@ -2,7 +2,6 @@
 import './../styles/globals.css';
 import './../styles/darkmode.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from './layout';
 import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
@@ -25,9 +24,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {showSidebar ? (
-        <Layout>
           <Component {...pageProps} />
-        </Layout>
       ) : (
         <Component {...pageProps} />
       )}

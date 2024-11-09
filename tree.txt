@@ -27,6 +27,14 @@ School Management System
         -   mongodb.js
         -   models
             -   User.js
+            -   Student.js
+            -   Teacher.js
+            -   Parent.js
+            -   Course.js
+            -   Attendance.js
+            -   Grade.js
+            -   Notification.js
+            -   Announcement.js
         -   utils (frequently used functions)
             -   VerifyToken.js
 
@@ -55,6 +63,15 @@ School Management System
         -   _documents.js
         -   index.js
         -   layout.js
+        -   about
+            -   index.js
+        -   contact
+            -   index.js
+        -   faqs
+            -   index.js
+        -   terms-and-conditions
+            -   index.js
+        -   index.js (Guest homepage)
         -   api
             -   login.js
             -   register.js
@@ -121,13 +138,4 @@ School Management System
             -   teacher-settings
                 -   index.js
             -   index.js (Teacher dashboard homepage)
-            guest
-            -   about
-                -   index.js
-            -   contact
-                -   index.js
-            -   faq
-                -   index.js
-            -   terms-and-conditions
-                -   index.js
-            -   index.js (Guest homepage)
+          
