@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CourseModal from "./../../../components/CourseModal"; // Modal component for course details
+import CourseModal from "../../../components/Modals/CourseModal"; // Modal component for course details
 
 export default function ManageCourses() {
   const [courses, setCourses] = useState([]);

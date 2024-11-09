@@ -7,7 +7,7 @@ export default function GetStarted() {
         href="/authentication/login" 
         className='btn btn-primary px-3 py-1 text-white rounded-2 text-decoration-none'
       >
-        Get Started
+        Login
       </Link>
     </>
   )

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import StudentModal from "./../../../components/StudentModal";
+import StudentModal from "../../../components/Modals/StudentModal";
 
 export default function ManageStudents() {
   const [students, setStudents] = useState([]);
@@ -44,7 +43,7 @@ export default function ManageStudents() {
   );
 
   return (
-    <div className="container py-4">
+    <div className="container py-4 bg-dark2 text-dark">
       <h1>Manage Students</h1>
       <div className="mb-3 d-flex justify-content-between">
         <input
@@ -96,6 +95,7 @@ export default function ManageStudents() {
           ))}
         </tbody>
       </table>
+      <div className="bg-dark1 text-dark">
       {showModal && (
         <StudentModal
           student={currentStudent}
@@ -114,6 +114,7 @@ export default function ManageStudents() {
           }}
         />
       )}
+      </div>
     </div>
   );
 }

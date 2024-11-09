@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import TeacherModal from '../../../components/TeacherModal';
+import TeacherModal from '../../../components/Modals/TeacherModal';
 
 export default function ManageTeachers() {
   const [teachers, setTeachers] = useState([]);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ParentModal from "./../../../components/ParentModal"; // Modal component for parent details
+import ParentModal from "../../../components/Modals/ParentModal"; // Modal component for parent details
 
 export default function ManageParents() {
   const [parents, setParents] = useState([]);

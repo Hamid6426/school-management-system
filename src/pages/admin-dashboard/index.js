@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 }
 export default function AdminDashboard({ userData }) {
   return (
-    <div className="bg-dark2 text-dark w-100  ">
+    <div className="w-100">
       <div
         className="bg-dark1 bg-white py-3 py-md-0 rounded-3 w-100 d-flex flex-md-row flex-column justify-content-between align-items-center px-3"
         style={{ minHeight: "60px" }}
