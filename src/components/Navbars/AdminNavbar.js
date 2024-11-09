@@ -60,7 +60,7 @@ const AdminNavbar = () => {
           <Dropdown buttonLabel={section.button} links={section.links}  />
         </div>
       ))}
-      <ThemeToggle />
+      <ThemeToggle style={{ height: "48px" }} />
       <Logout />
     </div>
   );

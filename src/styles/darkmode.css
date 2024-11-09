@@ -17,6 +17,11 @@ html, body {
   background-color: #222 !important;
 }
 
+.dark .bg-dark3 {
+  background-color: #333 !important;
+}
+
+
 .dark .text-dark {
   color: #ffffff !important;
 }
