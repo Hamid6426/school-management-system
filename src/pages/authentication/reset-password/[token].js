@@ -1,6 +1,7 @@
 // pages/reset-password/[token].js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Header from '@/components/Header';
 
 const ResetPassword = () => {
     const router = useRouter();
@@ -69,8 +70,10 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="container w-100 d-flex flex-column align-items-center justify-content-center">
-            <h2 className="my-4 text-center">Reset Your Password</h2>
+        <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center"
+        style={{ backgroundColor: "#ddd" }}>
+      <Header/>
+      <h2 className="my-4 text-center">Reset Your Password</h2>
             <form onSubmit={handleChangePassword}>
                 <div className="container w-100 d-flex flex-column justify-content-center">
                     <div className="w-100" style={{ minWidth: "312px" }}>
@@ -86,7 +89,7 @@ const ResetPassword = () => {
                         />
                     </div>
                     <div className="w-100" style={{ minWidth: "312px" }}>
-                        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                        <label htmlFor="confirmPassword" className="form-label mt-3">Confirm Password</label>
                         <input
                             type="password"
                             className="form-control"
@@ -97,7 +100,7 @@ const ResetPassword = () => {
                             required
                         />
                     </div>
-                    <div className="container w-100 d-flex justify-content-center">
+                    <div className="container w-100 d-flex justify-content-center mt-4">
                         <button
                             type="submit"
                             className="mt-2 mb-3 btn btn-primary text-center"

@@ -22,7 +22,7 @@ export default function ThemeToggle() {
   return (
     <button 
     onClick={toggleDarkMode} 
-    className='bg-primary text-white px-3 py-2 rounded-3 border-0 fw-bold'
+    className='btn btn-primary px-3 py-1 text-white rounded-2 border-0'
     >
       {isDarkMode ? 'Light' : 'Dark'}
     </button>

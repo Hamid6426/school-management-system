@@ -28,7 +28,7 @@ export default function Logout() {
   return (
     <div>
     <div className=''>
-    <button onClick={handleLogout} className="border-0 rounded-3 px-4 py-2 btn btn-danger w-100 mt-3" >
+    <button onClick={handleLogout} className="btn btn-danger px-3 py-1 text-white rounded-2 w-100 mt-3" >
       Logout
     </button>
     </div>

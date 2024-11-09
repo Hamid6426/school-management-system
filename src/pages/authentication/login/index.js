@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Header from '@/components/Header';
 
 const Login = () => {
   const router = useRouter();
@@ -53,8 +54,9 @@ const Login = () => {
   };
 
   return (
-    <div className="container w-100 d-flex flex-column align-items-center justify-content-center">
-      <h2 className="my-4 text-text-center">Login</h2>
+    <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: "#ddd" }}>
+      <Header/>
+      <h2 className="mb-4 text-text-center">Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="container w-100 d-flex flex-column justify-content-center">
 
@@ -70,7 +72,7 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-1">
+          <div className="mb-1 mt-3">
             <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
@@ -82,7 +84,7 @@ const Login = () => {
               required
             />
           </div>
-          <Link href="forgot-password" className="mb-3">Forgot Password?</Link>
+          <Link href="forgot-password" className="mb-3 mt-1 text-decoration-none fw-bold">Forgot Password?</Link>
           <div className="container w-100 d-flex justify-content-center">
 
             <button type="submit" className="mt-2 mb-3 btn btn-primary text-center" style={{ minWidth: "312px" }}>
@@ -91,6 +93,8 @@ const Login = () => {
           </div>
         </div>
       </form >
+      <div>Don&apos;t have an account yet?</div>
+      <Link href="/authentication/sign-up" className='text-decoration-none fw-bold'>Register here</Link>
     </div >
   );
 };

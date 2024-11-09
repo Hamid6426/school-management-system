@@ -27,8 +27,8 @@ const ParentNavbar = () => {
 
   return (
     <div
-      className="d-flex flex-column p-3 bg-white bg-black0 text-whites"
-      style={{ width: "240px", height: "100vh" }}
+      className="bg-dark1 text-dark d-flex flex-column p-3 bg-white bg-black0 text-whites"
+      style={{ width: "240px", minHeight: "100vh" }}
     >
       <h4 className="text-primary mb-3 text-center fw-bold h4">
         PROGRESS SCHOOL

@@ -5,14 +5,22 @@
   box-sizing: border-box;
 }
 
-.dark .bg-black0 {
-  background-color: #000 !important;
+html, body {
+  min-width: 100%;
 }
 
-.dark .text-whites {
+.dark .bg-dark1 {
+  background-color: #111 !important;
+}
+
+.dark .bg-dark2 {
+  background-color: #222 !important;
+}
+
+.dark .text-dark {
   color: #ffffff !important;
 }
 
-.dark .bg-black1 {
+.dark .dropdown-item-dark .dropdown-menu-dark {
   background-color: #222 !important;
 }

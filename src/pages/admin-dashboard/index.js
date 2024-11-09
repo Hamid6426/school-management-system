@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function AdminDashboard({ userData }) {
   return (
     <AdminLayout>
-      <div>
+      <div className="bg-dark2 text-dark">
         <h1>
           Welcome, {userData.fullName} ({userData.role})
         </h1>

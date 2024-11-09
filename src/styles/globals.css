@@ -7,3 +7,7 @@
 html, body {
   width: 100%;
 }
+
+.dark .dropdown-item .dropdown-menu .dropdown {
+  background-color: #fff !important;
+}
