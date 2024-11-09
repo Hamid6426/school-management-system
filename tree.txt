@@ -1,0 +1,133 @@
+School Management System
+
+-   .env
+-   .env.local
+-   package.js
+-   package.lock.js
+-   next-config.js
+-   .gitignore
+-   node_modules    
+-   public
+    -   school-logo.svg
+    -   teacher-icon.svg
+    -   admin-icon.svg
+    -   student-icon.svg
+    -   parent-icon.svg
+    -   guest-icon.svg
+-   src
+    -   styles
+        -   global.css
+        -   darkmode.css
+
+    -   fonts
+        -   GeistMonoVF.woff
+        -   GeistVF.woff
+
+    -   lib
+        -   mongodb.js
+        -   models
+            -   User.js
+        -   utils (frequently used functions)
+            -   VerifyToken.js
+
+    -   components
+        -   GetStarted.js
+        -   Login.js
+        -   Logout.js
+        -   Header.js
+        -   Dropdown.js
+        -   ThemeToggle.js
+        -   profile.js
+        -   student.js
+        -   teacher.js
+        -   parent.js
+        -   courses.js
+        -   attendance.js
+        -   notification.js
+        -   admin-dashboard.js
+        -   navbar
+            -   AdminNavbar.js
+            -   ParentNavbar.js
+            -   StudentNavbar.js
+            -   TeacherNavbar.js
+    -   pages
+        -   _app.js
+        -   _documents.js
+        -   index.js
+        -   layout.js
+        -   api
+            -   login.js
+            -   register.js
+            -   forgot-password.js
+            -   reset-password.js
+        -   authentication
+            -   login
+                -   index.js
+            -   sign-up
+                -   index.js
+            -   forgot-password
+                -   index.js
+            -   reset-password
+                -   index.js  (Admin dashboard homepage)
+        -   admin-dashboard
+            -    manage-students
+                -   index.js
+            -    manage-teachers
+                -   index.js
+            -    create-announcement
+                -   index.js
+            -    manage-parents
+                -   index.js
+            -    manage-courses
+                -   index.js
+            -    manage-roles
+                -   index.js
+            -    attendance-report
+                -   index.js
+            -    admin-settings
+                -   index.js
+            -   index.js
+        -   parent
+            -   attendance-report
+                -   index.js
+            -   child-progress
+                -   index.js
+            -   grade-report
+                -   index.js
+            -   parent-settings
+                -   index.js
+            -   index.js (Parent dashboard homepage)
+        -   student
+            -   courses
+                -   index.js
+            -   attendance-report
+                -   index.js
+            -   marks
+                -   index.js
+            -   performance-report
+                -   index.js
+            -   student-settings
+                -   index.js
+            -   index.js (Student dashboard homepage)  
+        -   teacher
+            -   manage-students
+                -   index.js
+            -   create-announcement
+                -   index.js
+            -   assign-grades
+                -   index.js
+            -   attendance
+                -   index.js
+            -   teacher-settings
+                -   index.js
+            -   index.js (Teacher dashboard homepage)
+            guest
+            -   about
+                -   index.js
+            -   contact
+                -   index.js
+            -   faq
+                -   index.js
+            -   terms-and-conditions
+                -   index.js
+            -   index.js (Guest homepage)
