@@ -1,37 +1,28 @@
-import { studentsData } from "../../../data/studentsData"; // Dummy data or DB connection
-
-let students = studentsData || [];
+import connectToDatabase from "../../../lib/mongodb";
+import Parent from "../../../lib/models/Parent";
 
 export default async function handler(req, res) {
   const { id } = req.query;
-  const studentIndex = students.findIndex((student) => student._id === parseInt(id));
 
-  switch (req.method) {
-    case "GET":
-      if (studentIndex !== -1) {
-        res.status(200).json(students[studentIndex]);
-      } else {
-        res.status(404).json({ message: "Student not found" });
-      }
-      break;
-    case "PUT":
-      if (studentIndex !== -1) {
-        students[studentIndex] = { ...students[studentIndex], ...req.body };
-        res.status(200).json(students[studentIndex]);
-      } else {
-        res.status(404).json({ message: "Student not found" });
-      }
-      break;
-    case "DELETE":
-      if (studentIndex !== -1) {
-        const deletedStudent = students.splice(studentIndex, 1);
-        res.status(200).json(deletedStudent[0]);
-      } else {
-        res.status(404).json({ message: "Student not found" });
-      }
-      break;
-    default:
-      res.status(405).json({ message: "Method Not Allowed" });
-      break;
+  if (req.method === "PUT") {
+    const { fullName, email, phone } = req.body;
+
+    try {
+      await connectToDatabase();
+      const parent = await Parent.findByIdAndUpdate(id, { fullName, email, phone }, { new: true });
+      res.status(200).json(parent);
+    } catch (error) {
+      res.status(500).json({ message: "Error updating parent" });
+    }
+  } else if (req.method === "DELETE") {
+    try {
+      await connectToDatabase();
+      const parent = await Parent.findByIdAndDelete(id);
+      res.status(200).json({ message: "Parent deleted successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Error deleting parent" });
+    }
+  } else {
+    res.status(405).json({ message: "Method Not Allowed" });
   }
 }

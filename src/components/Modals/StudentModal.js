@@ -45,9 +45,10 @@ export default function StudentModal({ student, onClose, onSave }) {
   };
 
   return (
-    <div className="modal show d-block" tabIndex="-1">
+    <div className="modal show d-block" style={{ backgroundColor: "#777" }} tabIndex="-1">
       <div className="modal-dialog">
-        <div className="modal-content">
+      <div className="modal-content bg-dark2 text-dark">
+
           <div className="modal-header">
             <h5 className="modal-title">{student ? "Edit Student" : "Add Student"}</h5>
             <button type="button" className="btn-close" onClick={onClose}></button>

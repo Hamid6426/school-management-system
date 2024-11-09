@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 
-const courseSchema = new mongoose.Schema({
-  courseName: { type: String, required: true },
-  courseCode: { type: String, required: true, unique: true },
-  teacher: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher' },
-  students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Student' }],
-  description: String
-});
+const CourseSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  duration: { type: String }, // e.g., "6 weeks"
+  instructor: { type: String } // e.g., "John Doe" or can be a reference to a Teacher model if needed
+}, { timestamps: true });
 
-export default mongoose.models.Course || mongoose.model('Course', courseSchema);
+const Course = mongoose.models.Course || mongoose.model('Course', CourseSchema);
+
+export default Course;

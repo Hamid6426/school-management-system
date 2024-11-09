@@ -1,38 +1,30 @@
+import connectToDatabase from "../../../lib/mongodb";
+import Course from "../../../lib/models/Course";
+
 export default async function handler(req, res) {
   const { id } = req.query;
-  const { method } = req;
+  await connectToDatabase();
 
-  switch (method) {
-    case 'GET':
-      // Fetch a single course by ID
-      const course = courses.find((c) => c._id === id);
-      if (course) {
-        res.status(200).json(course);
-      } else {
-        res.status(404).json({ message: 'Course not found' });
-      }
-      break;
-
-    case 'PUT':
-      // Update a course
-      const updatedData = req.body;
-      const index = courses.findIndex((c) => c._id === id);
-      if (index !== -1) {
-        courses[index] = { ...courses[index], ...updatedData };
-        res.status(200).json(courses[index]);
-      } else {
-        res.status(404).json({ message: 'Course not found' });
-      }
-      break;
-
-    case 'DELETE':
-      // Delete a course
-      courses = courses.filter((c) => c._id !== id);
-      res.status(204).end();
-      break;
-
-    default:
-      res.setHeader('Allow', ['GET', 'PUT', 'DELETE']);
-      res.status(405).end(`Method ${method} Not Allowed`);
+  if (req.method === "PUT") {
+    const { title, description, duration, instructor } = req.body;
+    try {
+      const course = await Course.findByIdAndUpdate(
+        id,
+        { title, description, duration, instructor },
+        { new: true }
+      );
+      res.status(200).json(course);
+    } catch (error) {
+      res.status(500).json({ message: "Error updating course" });
+    }
+  } else if (req.method === "DELETE") {
+    try {
+      await Course.findByIdAndDelete(id);
+      res.status(200).json({ message: "Course deleted successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Error deleting course" });
+    }
+  } else {
+    res.status(405).json({ message: "Method Not Allowed" });
   }
 }

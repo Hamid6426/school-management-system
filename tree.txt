@@ -1,5 +1,7 @@
 School Management System
 
+Tech: Next.js (page router), react, bootstrap, mongoose/mongodb, javascript
+
 -   .env
 -   .env.local
 -   package.js
@@ -18,11 +20,10 @@ School Management System
     -   styles
         -   global.css
         -   darkmode.css
-
     -   fonts
         -   GeistMonoVF.woff
         -   GeistVF.woff
-
+    -   data
     -   lib
         -   mongodb.js
         -   models
@@ -37,7 +38,6 @@ School Management System
             -   Announcement.js
         -   utils (frequently used functions)
             -   VerifyToken.js
-
     -   components
         -   GetStarted.js
         -   Login.js
@@ -45,24 +45,27 @@ School Management System
         -   Header.js
         -   Dropdown.js
         -   ThemeToggle.js
-        -   profile.js
-        -   student.js
-        -   teacher.js
-        -   parent.js
-        -   courses.js
-        -   attendance.js
-        -   notification.js
-        -   admin-dashboard.js
-        -   navbar
+        -   Navbar
             -   AdminNavbar.js
             -   ParentNavbar.js
             -   StudentNavbar.js
             -   TeacherNavbar.js
+        -   Layouts
+            -   AdminLayout.js
+            -   TeacherLayout.js
+            -   StudentLayout.js
+            -   ParentLayout.js
+            -   AdminLayout.js
+        -   Modals
+            -   AdminModal.js
+            -   StudentModal.js
+            -   ParentModal.js
+            -   CourseModal.js
+            -   RoleModal.js
     -   pages
         -   _app.js
         -   _documents.js
         -   index.js
-        -   layout.js
         -   about
             -   index.js
         -   contact
@@ -73,19 +76,40 @@ School Management System
             -   index.js
         -   index.js (Guest homepage)
         -   api
+            -   courses
+                -   [id].js
+                -   index.js
+            -   parents
+                -   [id].js
+                -   index.js
+            -   roles
+                -   [id].js
+                -   index.js
+            -   students
+                -   [id].js
+                -   index.js
+            -   teachers
+                -   [id].js
+                -   index.js
             -   login.js
             -   register.js
             -   forgot-password.js
             -   reset-password.js
-        -   authentication
+            -   announcement
+            -   attendance
+            -   course
+            -   getUserRole.js (Don't remember where its used now)
+            -   grades
+            -   notification
+        -   authentication (perfected)
             -   login
-                -   index.js
+                -   index.js (redirect to dashboard according to role)
             -   sign-up
                 -   index.js
             -   forgot-password
                 -   index.js
             -   reset-password
-                -   index.js  (Admin dashboard homepage)
+                -   index.js
         -   admin-dashboard
             -    manage-students
                 -   index.js
@@ -138,4 +162,12 @@ School Management System
             -   teacher-settings
                 -   index.js
             -   index.js (Teacher dashboard homepage)
-          
+        -   information (root/information/example(about-us))
+            -   about-us
+                -   index.js
+            -   contact-us
+                -   index.js
+            -   faqs
+                -   index.js
+            -   terms-and-conditions
+                -   index.js

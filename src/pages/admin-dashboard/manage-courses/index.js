@@ -1,83 +1,82 @@
-import { useState, useEffect } from "react";
-import CourseModal from "../../../components/Modals/CourseModal"; // Modal component for course details
+import { useState, useEffect } from 'react';
+import CourseModal from '../../../components/Modals/CourseModal';
 
 export default function ManageCourses() {
   const [courses, setCourses] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [currentCourse, setCurrentCourse] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    // Fetch courses from the API
     const fetchCourses = async () => {
-      const response = await fetch("/api/courses");
+      const response = await fetch('/api/courses');
       const data = await response.json();
       setCourses(data);
     };
     fetchCourses();
   }, []);
 
-  const handleEdit = (course) => {
-    setCurrentCourse(course);
-    setShowModal(true);
-  };
-
-  const handleDelete = async (id) => {
-    if (confirm("Are you sure you want to delete this course?")) {
-      await fetch(`/api/courses/${id}`, { method: "DELETE" });
+  const handleSearch = (e) => setSearchQuery(e.target.value);
+  const handleAddCourse = () => { setCurrentCourse(null); setShowModal(true); };
+  const handleEditCourse = (course) => { setCurrentCourse(course); setShowModal(true); };
+  const handleDeleteCourse = async (id) => {
+    if (confirm('Are you sure you want to delete this course?')) {
+      await fetch(`/api/courses/${id}`, { method: 'DELETE' });
       setCourses(courses.filter((course) => course._id !== id));
     }
   };
+  const handleModalClose = () => { setShowModal(false); setCurrentCourse(null); };
 
-  const handleModalClose = () => {
-    setShowModal(false);
-    setCurrentCourse(null);
-  };
+  const filteredCourses = courses.filter((course) =>
+    course.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="container py-4">
       <h1>Manage Courses</h1>
-      <button className="btn btn-primary mb-3" onClick={() => setShowModal(true)}>
-        Add New Course
-      </button>
+      <div className="mb-3 d-flex justify-content-between">
+        <input type="text" className="form-control w-50" placeholder="Search courses by title..." value={searchQuery} onChange={handleSearch} />
+        <button className="btn btn-primary" onClick={handleAddCourse}>Add New Course</button>
+      </div>
+
       <table className="table table-bordered">
         <thead>
           <tr>
             <th>#</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Duration</th>
+            <th>Instructor</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {courses.map((course, index) => (
+          {filteredCourses.map((course, index) => (
             <tr key={course._id}>
               <td>{index + 1}</td>
               <td>{course.title}</td>
               <td>{course.description}</td>
+              <td>{course.duration}</td>
+              <td>{course.instructor}</td>
               <td>
-                <button className="btn btn-warning btn-sm mx-2" onClick={() => handleEdit(course)}>
-                  Edit
-                </button>
-                <button className="btn btn-danger btn-sm" onClick={() => handleDelete(course._id)}>
-                  Delete
-                </button>
+                <button className="btn btn-warning btn-sm mx-2" onClick={() => handleEditCourse(course)}>Edit</button>
+                <button className="btn btn-danger btn-sm" onClick={() => handleDeleteCourse(course._id)}>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
       {showModal && (
         <CourseModal
           course={currentCourse}
           onClose={handleModalClose}
           onSave={(updatedCourse) => {
-            setCourses((prev) => {
-              if (currentCourse) {
-                return prev.map((c) => (c._id === updatedCourse._id ? updatedCourse : c));
-              } else {
-                return [...prev, updatedCourse];
-              }
-            });
+            if (currentCourse) {
+              setCourses(courses.map((c) => (c._id === updatedCourse._id ? updatedCourse : c)));
+            } else {
+              setCourses([...courses, updatedCourse]);
+            }
             handleModalClose();
           }}
         />
