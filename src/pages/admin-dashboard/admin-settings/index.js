@@ -1,127 +1,50 @@
-// components/AdminSettings.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import AdminModal from "@/components/Modals/AdminModal";
 
 export default function AdminSettings() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [adminData, setAdminData] = useState({ fullName: "", email: "" });
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        setErrorMessage("You need to be logged in.");
-        return;
-      }
-
-      const response = await fetch('/api/admin-settings', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-
+    // Fetch current admin data from the API
+    const fetchAdminData = async () => {
+      const response = await fetch("/api/admin-settings");
       const data = await response.json();
-
-      if (response.ok) {
-        setFormData({
-          fullName: data.fullName,
-          email: data.email,
-          password: '',
-          confirmPassword: ''
-        });
-      } else {
-        setErrorMessage('Failed to load user data');
-      }
+      setAdminData({ fullName: data.fullName, email: data.email });
     };
-
-    fetchUserData();
+    fetchAdminData();
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleEdit = () => setShowModal(true);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (formData.password && formData.password !== formData.confirmPassword) {
-      setErrorMessage('Passwords do not match');
-      return;
-    }
+  const handleModalClose = () => setShowModal(false);
 
-    setErrorMessage('');
-    const token = localStorage.getItem('token');
-    const response = await fetch('/api/admin-settings', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify(formData)
-    });
-
-    if (response.ok) {
-      setSuccessMessage('Settings updated successfully');
-    } else {
-      setErrorMessage('Error updating settings');
-    }
+  const handleSave = (updatedAdmin) => {
+    setAdminData(updatedAdmin);
+    setShowModal(false);
   };
 
   return (
-    <div className="container py-4">
-      <h1>Admin Account Settings</h1>
-      {successMessage && <div className="alert alert-success">{successMessage}</div>}
-      {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="fullName"
-            className="form-control"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
+    <div className="container py-4 bg-dark2 text-dark">
+      <h1>Admin Settings</h1>
+      <div className="card bg-dark1 text-dark p-4">
+        <div>
+          <strong>Full Name:</strong> {adminData.fullName}
         </div>
-
-        <div className="mb-3">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+        <div>
+          <strong>Email:</strong> {adminData.email}
         </div>
-
-        <h3>Update Password</h3>
-        <div className="mb-3">
-          <label>New Password</label>
-          <input
-            type="password"
-            name="password"
-            className="form-control"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>Confirm New Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            className="form-control"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary">Save Changes</button>
-      </form>
+        <button className="btn btn-primary mt-3" onClick={handleEdit}>
+          Edit Profile
+        </button>
+      </div>
+      {showModal && (
+        <AdminModal
+          adminData={adminData}
+          onClose={handleModalClose}
+          onSave={handleSave}
+        />
+      )}
     </div>
   );
 }
