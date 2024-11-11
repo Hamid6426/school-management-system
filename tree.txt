@@ -1,4 +1,4 @@
-School Management System
+School Management System Project Structure
 
 Tech: Next.js (page router), react, bootstrap, mongoose/mongodb, javascript
 
@@ -86,7 +86,7 @@ Tech: Next.js (page router), react, bootstrap, mongoose/mongodb, javascript
                 -   [id].js
                 -   index.js
             -   students
-                -   [id].js
+                -   [id].js 
                 -   index.js
             -   teachers
                 -   [id].js

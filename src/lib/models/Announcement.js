@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 
-const announcementSchema = new mongoose.Schema({
-  creator: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher', required: true },
+const AnnouncementSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  content: { type: String, required: true },
-  dateCreated: { type: Date, default: Date.now }
-});
+  message: { type: String, required: true },
+  date: { type: Date, required: true }
+}, { timestamps: true });
 
-export default mongoose.models.Announcement || mongoose.model('Announcement', announcementSchema);
+const Announcement = mongoose.models.Announcement || mongoose.model('Announcement', AnnouncementSchema);
+
+export default Announcement;

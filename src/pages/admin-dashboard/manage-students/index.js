@@ -10,7 +10,7 @@ export default function ManageStudents() {
   useEffect(() => {
     // Fetch student data from the API
     const fetchStudents = async () => {
-      const response = await fetch("/api/students"); // Replace with actual API endpoint
+      const response = await fetch("/api/students");
       const data = await response.json();
       setStudents(data);
     };

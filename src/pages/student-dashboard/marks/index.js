@@ -1,25 +1,31 @@
 import { verifyToken } from "../../../lib/utils/verifyToken";
 import Link from "next/link";
 
-// Example Data for Attendance
-const exampleAttendance = [
+// Example Data for Marks
+const exampleMarks = [
   {
     courseName: "Computer Science 101",
-    totalClasses: 20,
-    attendedClasses: 18,
-    lastUpdated: "2024-11-08",
+    assignments: [
+      { title: "Assignment 1", score: 85, total: 100 },
+      { title: "Midterm Exam", score: 78, total: 100 },
+      { title: "Final Project", score: 90, total: 100 },
+    ],
   },
   {
     courseName: "Mathematics for Computing",
-    totalClasses: 15,
-    attendedClasses: 14,
-    lastUpdated: "2024-11-06",
+    assignments: [
+      { title: "Quiz 1", score: 18, total: 20 },
+      { title: "Assignment 1", score: 70, total: 100 },
+      { title: "Final Exam", score: 88, total: 100 },
+    ],
   },
   {
     courseName: "Physics",
-    totalClasses: 10,
-    attendedClasses: 9,
-    lastUpdated: "2024-11-05",
+    assignments: [
+      { title: "Lab Report 1", score: 25, total: 30 },
+      { title: "Midterm Exam", score: 65, total: 100 },
+      { title: "Final Exam", score: 80, total: 100 },
+    ],
   },
 ];
 
@@ -39,18 +45,18 @@ export async function getServerSideProps(context) {
   // Mock user data for demonstration
   const userData = { fullName: "Student Name", role: "Student" };
 
-  // Use example data for attendance
-  const attendanceRecords = exampleAttendance;
+  // Use example data for marks
+  const marksRecords = exampleMarks;
 
   return {
     props: {
       userData,
-      attendanceRecords,
+      marksRecords,
     },
   };
 }
 
-export default function StudentAttendanceReport({ userData, attendanceRecords }) {
+export default function StudentMarks({ userData, marksRecords }) {
   return (
     <div className="w-100">
       <div
@@ -66,34 +72,33 @@ export default function StudentAttendanceReport({ userData, attendanceRecords })
         </Link>
       </div>
 
-      {/* Attendance Report List */}
+      {/* Marks Report List */}
       <div className="row mt-3">
-        {attendanceRecords.length > 0 ? (
-          attendanceRecords.map((record, index) => (
+        {marksRecords.length > 0 ? (
+          marksRecords.map((record, index) => (
             <div key={index} className="col-md-6 col-lg-4 mb-3">
               <div className="card border-0 shadow-sm bg-light">
-                <div className="card-header bg-success text-white">
+                <div className="card-header bg-info text-white">
                   <h6 className="card-title mb-0">{record.courseName}</h6>
                 </div>
                 <div className="card-body">
-                  <p className="mb-1">
-                    <strong>Total Classes:</strong> {record.totalClasses}
-                  </p>
-                  <p className="mb-1">
-                    <strong>Classes Attended:</strong> {record.attendedClasses}
-                  </p>
-                  <p className="mb-1">
-                    <strong>Attendance Percentage:</strong>{" "}
-                    {((record.attendedClasses / record.totalClasses) * 100).toFixed(2)}%
-                  </p>
-                  <p className="mb-1">
-                    <strong>Last Updated:</strong> {record.lastUpdated}
-                  </p>
+                  <h6>Assignments & Exams</h6>
+                  <ul className="list-unstyled">
+                    {record.assignments.map((assignment, i) => (
+                      <li key={i} className="d-flex justify-content-between text-muted">
+                        <span>{assignment.title}</span>
+                        <span>
+                          {assignment.score}/{assignment.total} (
+                          {((assignment.score / assignment.total) * 100).toFixed(2)}%)
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className="card-footer d-flex justify-content-end">
                   <Link
-                    href={`/student-dashboard/attendance/${record.courseName}`}
-                    className="btn btn-outline-success btn-sm"
+                    href={`/student-dashboard/marks/${record.courseName}`}
+                    className="btn btn-outline-info btn-sm"
                   >
                     View Details
                   </Link>
@@ -103,7 +108,7 @@ export default function StudentAttendanceReport({ userData, attendanceRecords })
           ))
         ) : (
           <div className="col-12">
-            <div className="alert alert-warning">No attendance records available.</div>
+            <div className="alert alert-warning">No marks records available.</div>
           </div>
         )}
       </div>

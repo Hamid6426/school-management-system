@@ -1,3 +1,4 @@
+// [id].js
 import connectToDatabase from "../../../lib/mongodb";
 import Course from "../../../lib/models/Course";
 
