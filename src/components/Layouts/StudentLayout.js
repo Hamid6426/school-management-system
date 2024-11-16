@@ -1,5 +1,4 @@
 import StudentNavbar from '../Navbars/StudentNavbar'; // Student specific navbar
-import Footer from './../Footer';
 
 
 export default function StudentLayout({ children }) {
@@ -10,7 +9,6 @@ export default function StudentLayout({ children }) {
 
         {children}
       </main>
-      <Footer />
     </div>
   );
 }

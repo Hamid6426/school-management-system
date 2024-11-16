@@ -1,5 +1,4 @@
 import ParentNavbar from '../Navbars/ParentNavbar'; // Parent specific navbar
-import Footer from './../Footer';
 
 
 export default function ParentLayout({ children }) {
@@ -10,7 +9,6 @@ export default function ParentLayout({ children }) {
 
         {children}
       </main>
-      <Footer />
     </div>
   );
 }

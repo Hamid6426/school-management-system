@@ -1,5 +1,4 @@
 import AdminNavbar from '../Navbars/AdminNavbar'; // Admin specific navbar
-import Footer from './../Footer';
 
 export default function AdminLayout({ children }) {
   return (
@@ -8,7 +7,6 @@ export default function AdminLayout({ children }) {
       <main className="py-3 px-3 rounded-4 min-vh-100 w-100">
         {children}
       </main>
-      <Footer />
     </div>
   );
 }

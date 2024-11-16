@@ -1,5 +1,4 @@
 import TeacherNavbar from '../Navbars/TeacherNavbar'; // Teacher specific navbar
-import Footer from './../Footer';
 
 export default function TeacherLayout({ children }) {
   return (
@@ -9,7 +8,6 @@ export default function TeacherLayout({ children }) {
 
         {children}
       </main>
-      <Footer />
     </div>
   );
 }
