@@ -1,5 +1,6 @@
 import ParentNavbar from '../Navbars/ParentNavbar'; // Parent specific navbar
-import Footer from '../Footer';
+import Footer from './../Footer';
+
 
 export default function ParentLayout({ children }) {
   return (

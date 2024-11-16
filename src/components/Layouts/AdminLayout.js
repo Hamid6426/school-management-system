@@ -1,5 +1,5 @@
 import AdminNavbar from '../Navbars/AdminNavbar'; // Admin specific navbar
-import Footer from '../Footer';
+import Footer from './../Footer';
 
 export default function AdminLayout({ children }) {
   return (
