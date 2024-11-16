@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Header from './../../../components/Header';
+import Header from "./../../../components/Header";
 
 const ForgotPassword = () => {
   const router = useRouter();

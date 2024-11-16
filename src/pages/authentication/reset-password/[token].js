@@ -1,7 +1,7 @@
 // pages/reset-password/[token].js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Header from '@/components/Header';
+import Header from "./../../../components/Header";
 
 const ResetPassword = () => {
     const router = useRouter();
