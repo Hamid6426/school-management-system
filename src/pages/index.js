@@ -32,7 +32,7 @@ export default function Home() {
             width="400"
             height="400"
             alt="Hero image"
-            className="d-flex"
+            className="d-flex flex-column"
           />
         </div>
       </div>
