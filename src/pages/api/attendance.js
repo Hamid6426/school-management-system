@@ -1,6 +1,6 @@
 // api/attendance.js
-import connectToDatabase from './../../lib/mongodb';
-import Attendance from './../../lib/models/Attendance';
+import connectToDatabase from '@/lib/mongodb';
+import Attendance from '@/lib/models/Attendance';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

@@ -1,4 +1,4 @@
-import verifyToken from "./../../lib/utils/verifyToken";
+import verifyToken from "@/lib/utils/verifyToken";
 
 import User from "./../../lib/models/User";
 import Link from "next/link";

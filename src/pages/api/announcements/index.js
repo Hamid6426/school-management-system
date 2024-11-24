@@ -1,5 +1,5 @@
-import connectToDatabase from "../../../lib/mongodb";
-import Announcement from "../../../lib/models/Announcement";
+import connectToDatabase from "@/lib/mongodb";
+import Announcement from "@/lib/models/Announcement";
 
 export default async function handler(req, res) {
   await connectToDatabase();

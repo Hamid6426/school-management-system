@@ -1,7 +1,7 @@
 // pages/api/register.js
 import bcrypt from 'bcryptjs';
-import connectToDatabase from './../../lib/mongodb';
-import User from './../../lib/models/User';
+import connectToDatabase from '@/lib/mongodb';
+import User from '@/lib/models/User';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

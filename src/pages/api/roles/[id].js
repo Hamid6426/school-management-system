@@ -1,5 +1,5 @@
-import connectToDatabase from "../../../lib/mongodb";
-import Role from "../../../lib/models/Role";
+import connectToDatabase from "@/lib/mongodb";
+import Role from "@/lib/models/Role";
 
 export default async function handler(req, res) {
   const { id } = req.query;

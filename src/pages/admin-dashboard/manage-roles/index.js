@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import RoleModal from '../../../components/Modals/RoleModal';
+import RoleModal from '@/components/Modals/RoleModal';
 
 export default function ManageRoles() {
   const exampleUsers = [
@@ -93,7 +93,7 @@ export default function ManageRoles() {
 }
 
 // import { useState, useEffect } from 'react';
-// import RoleModal from '../../../components/Modals/RoleModal';
+// import RoleModal from '@/components/Modals/RoleModal';
 
 // export default function ManageRoles() {
 //   const [roles, setRoles] = useState([]);

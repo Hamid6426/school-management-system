@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CourseModal from '../../../components/Modals/CourseModal';
+import CourseModal from '@/components/Modals/CourseModal';
 
 export default function ManageCourses() {
   const [courses, setCourses] = useState([]);

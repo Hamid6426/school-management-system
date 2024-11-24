@@ -1,8 +1,8 @@
 // pages/api/login.js
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import connectToDatabase from './../../lib/mongodb';
-import User from './../../lib/models/User';
+import connectToDatabase from '@/lib/mongodb';
+import User from '@/lib/models/User';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 

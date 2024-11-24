@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AttendanceModal from '../../../components/Modals/AttendanceModal';
-import attendanceData from "../../../data/attendanceData.js";
+import AttendanceModal from '@/components/Modals/AttendanceModal';
+import attendanceData from "@/data/attendanceData.js";
 
 export default function AttendanceReport() {
   const [attendanceList, setAttendanceList] = useState(attendanceData);

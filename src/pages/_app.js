@@ -2,10 +2,10 @@ import "./../styles/globals.css";
 import "./../styles/darkmode.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/router";
-import AdminLayout from "../components/Layouts/AdminLayout"; // Import AdminLayout
-import ParentLayout from "../components/Layouts/ParentLayout"; // Import ParentLayout
-import StudentLayout from "../components/Layouts/StudentLayout"; // Import StudentLayout
-import TeacherLayout from "../components/Layouts/TeacherLayout"; // Import StudentLayout
+import AdminLayout from "@/components/Layouts/AdminLayout"; // Import AdminLayout
+import ParentLayout from "@/components/Layouts/ParentLayout"; // Import ParentLayout
+import StudentLayout from "@/components/Layouts/StudentLayout"; // Import StudentLayout
+import TeacherLayout from "@/components/Layouts/TeacherLayout"; // Import StudentLayout
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

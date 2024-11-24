@@ -1,4 +1,4 @@
-import { verifyToken } from "../../../lib/utils/verifyToken";
+import { verifyToken } from "@/lib/utils/verifyToken";
 import Link from "next/link";
 
 // Example Data for Attendance

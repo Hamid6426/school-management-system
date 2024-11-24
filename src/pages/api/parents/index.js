@@ -1,5 +1,5 @@
-import connectToDatabase from "../../../lib/mongodb";
-import Parent from "../../../lib/models/Parent";
+import connectToDatabase from "@/lib/mongodb";
+import Parent from "@/lib/models/Parent";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {

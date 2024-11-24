@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import AnnouncementModal from '../../../components/Modals/AnnouncementModal';
+import AnnouncementModal from '@/components/Modals/AnnouncementModal';
 
 export default function ManageAnnouncements() {
   const [announcements, setAnnouncements] = useState([]);

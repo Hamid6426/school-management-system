@@ -1,6 +1,6 @@
 // pages/index.js
 import Image from "next/image";
-import GetStarted from "./../components/GetStarted";
+import GetStarted from "@/components/GetStarted";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {

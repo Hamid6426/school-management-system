@@ -1,6 +1,6 @@
 // api/grade.js
-import connectToDatabase from '../../lib/mongodb';
-import Grade from '../../lib/models/Grade';
+import connectToDatabase from '@/lib/mongodb';
+import Grade from '@/lib/models/Grade';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

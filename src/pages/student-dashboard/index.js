@@ -1,6 +1,5 @@
-import verifyToken from "./../../lib/utils/verifyToken";
-
-import User from "./../../lib/models/User"; // Adjust the path as needed
+import verifyToken from "@/lib/utils/verifyToken";
+import User from "@/lib/models/User"; // Adjust the path as needed
 import Link from "next/link";
 
 export async function getServerSideProps(context) {

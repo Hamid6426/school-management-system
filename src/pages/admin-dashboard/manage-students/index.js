@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import StudentModal from "../../../components/Modals/StudentModal";
+import StudentModal from "@/components/Modals/StudentModal";
 
 export default function ManageStudents() {
   const [students, setStudents] = useState([]);

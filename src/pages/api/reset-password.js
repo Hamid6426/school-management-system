@@ -1,5 +1,5 @@
-import connectToDatabase from './../../lib/mongodb';
-import User from './../../lib/models/User';
+import connectToDatabase from '@/lib/mongodb';
+import User from '@/lib/models/User';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';  // Import bcrypt for password hashing
 

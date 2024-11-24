@@ -1,6 +1,6 @@
 // // pages/api/getUserRole.js
-// import connectToDatabase from './../../lib/mongodb';
-// import User from './../../lib/models/User'; // Import your User model
+// import connectToDatabase from './@/lib/mongodb';
+// import User from './@/lib/models/User'; // Import your User model
 
 // export default async function handler(req, res) {
 //   if (req.method !== 'GET') {
@@ -29,8 +29,8 @@
 // }
 
 // pages/api/getUserRole.js
-// import connectToDatabase from './../../lib/mongodb'; // MongoDB connection helper
-// import User from './../../lib/models/User'; // MongoDB User model
+// import connectToDatabase from './@/lib/mongodb'; // MongoDB connection helper
+// import User from './@/lib/models/User'; // MongoDB User model
 
 // export default async function handler(req, res) {
 //   if (req.method !== 'GET') {
@@ -63,8 +63,8 @@
 
 // pages/api/getUserRole.js
 import jwt from 'jsonwebtoken';
-import connectToDatabase from '../../lib/mongodb';
-import User from '../../lib/models/User';
+import connectToDatabase from '@/lib/mongodb';
+import User from '@/lib/models/User';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {

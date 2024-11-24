@@ -1,5 +1,5 @@
-import { verifyToken } from '../../../lib/utils/verifyToken';
-import User from './../../../lib/models/User'; // Adjust the path as needed
+import { verifyToken } from '@/lib/utils/verifyToken';
+import User from '@/lib/models/User'; // Adjust the path as needed
 
 export async function getServerSideProps(context) {
   const token = context.req.cookies.token || ''; 

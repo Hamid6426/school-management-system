@@ -1,6 +1,6 @@
 // api/notification.js
-import connectToDatabase from './../../lib/mongodb';
-import Notification from './../../lib/models/Notification';
+import connectToDatabase from '@/lib/mongodb';
+import Notification from '@/lib/models/Notification';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
