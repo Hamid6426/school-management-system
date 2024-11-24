@@ -1,7 +1,7 @@
 // pages/index.js
 import Image from "next/image";
 import GetStarted from "./../components/GetStarted";
-import Header from "../components/Header";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       className="bg-dark2 text-dark text-black text-whites min-vh-100 w-100 d-flex flex-row align-items-center justify-content-center position-relative"
       style={{ background: "#ddd" }}
     >
-      <Header />
+      <Navbar/>
       <div className="d-flex flex-row justify-content-center align-items-center w-100 pt-5 gap-5">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div className="d-flex flex-column justify-content-center align-items-start text-weight-bold">

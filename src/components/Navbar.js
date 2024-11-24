@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 import GetStarted from "./GetStarted";
 import Login from "./Login";
 
-export default function Header() {
+export default function Navbar() {
   return (
     <div
       className="bg-white bg-dark1 text-dark position-absolute top-0 w-100 d-flex flex-row justify-content-end align-items-center"
