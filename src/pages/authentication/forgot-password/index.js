@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Header from "./../../../components/Header";
 
 const ForgotPassword = () => {
   const router = useRouter();
@@ -35,7 +34,6 @@ const ForgotPassword = () => {
 
   return (
     <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: "#ddd" }}>
-      <Header/>
       <h2 className="mb-4 text-center">Forgot Password</h2>
       <form onSubmit={handleSubmit}>
         <div className="container w-100 d-flex flex-column justify-content-center">

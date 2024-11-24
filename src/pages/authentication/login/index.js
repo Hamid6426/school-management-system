@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Header from "./../../../components/Header";
 
 const Login = () => {
   const router = useRouter();
@@ -55,7 +54,6 @@ const Login = () => {
 
   return (
     <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: "#ddd" }}>
-      <Header/>
       <h2 className="mb-4 text-text-center">Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="container w-100 d-flex flex-column justify-content-center">

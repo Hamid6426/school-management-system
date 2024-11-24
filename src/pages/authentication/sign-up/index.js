@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Header from "./../../../components/Header";
 
 export default function Signup() {
   const router = useRouter();
@@ -36,7 +35,6 @@ export default function Signup() {
 
   return (
     <div className="bg-dark2 pt-5 min-vh-100 text-dark w-100 d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: "#ddd" }}>
-      <Header/>
       <h2 className="my-3 text-text-center">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="container w-100 d-flex justify-content-center">

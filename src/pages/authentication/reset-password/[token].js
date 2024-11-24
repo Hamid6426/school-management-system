@@ -1,7 +1,6 @@
 // pages/reset-password/[token].js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Header from "./../../../components/Header";
 
 const ResetPassword = () => {
     const router = useRouter();
@@ -72,7 +71,6 @@ const ResetPassword = () => {
     return (
         <div className="bg-dark2 text-dark min-vh-100 w-100 d-flex flex-column align-items-center justify-content-center"
         style={{ backgroundColor: "#ddd" }}>
-      <Header/>
       <h2 className="my-4 text-center">Reset Your Password</h2>
             <form onSubmit={handleChangePassword}>
                 <div className="container w-100 d-flex flex-column justify-content-center">
